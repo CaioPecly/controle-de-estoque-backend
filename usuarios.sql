@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 15/11/2024 às 01:26
+-- Tempo de geração: 21/11/2024 às 02:00
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -29,16 +29,18 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL,
-  `username` varchar(100) NOT NULL,
-  `senha` varchar(255) NOT NULL
+  `username` varchar(255) DEFAULT NULL,
+  `senha` varchar(255) DEFAULT NULL,
+  `createdAt` datetime NOT NULL,
+  `updatedAt` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Despejando dados para a tabela `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `username`, `senha`) VALUES
-(1, 'cio', '123');
+INSERT INTO `usuarios` (`id`, `username`, `senha`, `createdAt`, `updatedAt`) VALUES
+(1, 'caio ', '$2a$10$ptts3Ggsa73QJSHxoNa2jeTWKvrWNozrdjJLDlB5pcsFAlSH26VQa', '2024-11-20 23:52:45', '2024-11-20 23:52:45');
 
 --
 -- Índices para tabelas despejadas

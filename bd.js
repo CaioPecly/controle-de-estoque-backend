@@ -8,6 +8,7 @@ const jwt = require("jsonwebtoken");
 rotas.use(cors());
 rotas.use(express.json()); // Permite ler o corpo da requisição como JSON
 
+
 const conexaoComBanco = new Sequelize("estoque", "root", "", {
   host: "localhost",
   dialect: "mysql",
@@ -129,7 +130,7 @@ const Usuario = conexaoComBanco.define("usuarios", {
 });
 
 // Sincronizando o modelo com o banco
-Usuario.sync({ force: false });
+Usuario.sync({ force: false});
 
 // Rota de cadastro de usuários
 rotas.post("/cadastro", async function (req, res) {
